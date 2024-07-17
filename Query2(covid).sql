@@ -108,3 +108,92 @@ on DEA.location =  VAC.location
 and DEA.date = VAC.date
 where DEA.continent is not null
 order by 2,3
+
+--USING CTE
+
+WITH pvsv AS (
+    SELECT 
+        DEA.continent, 
+        DEA.location, 
+        DEA.date, 
+        DEA.population, 
+        VAC.new_vaccinations, 
+        SUM(CAST(VAC.new_vaccinations AS INT)) OVER (PARTITION BY DEA.location ORDER BY DEA.date) AS total_vaccine_sum
+    FROM 
+        portfolio..CovidDeaths DEA
+    JOIN 
+        portfolio..CovidVaccinations VAC
+        ON DEA.location = VAC.location
+        AND DEA.date = VAC.date
+    WHERE 
+        DEA.continent IS NOT NULL
+)
+SELECT *, (total_vaccine_sum/population)*100 as vaccine_percent
+FROM pvsv
+ORDER BY location, date
+
+
+--Making a temp table for more access
+--NOTE if we are making any changes to the temp table we can use the drop statement to make sure we avoid any errors being made
+drop table if exists #PercentPopulationVaccinated
+Create table #PercentPopulationVaccinated
+(
+ continent nvarchar(255),
+ location nvarchar(255),
+ date datetime,
+ population numeric,
+ new_vaccinations numeric,
+ total_vaccine_sum numeric)
+
+insert into #PercentPopulationVaccinated
+select DEA.continent, DEA.location, DEA.date ,DEA.population, VAC.new_vaccinations, SUM(CAST(VAC.new_vaccinations as int)) OVER (Partition by DEA.location order by DEA.location, DEA.date) as total_vaccine_sum
+from portfolio..CovidDeaths DEA
+join portfolio..CovidVaccinations VAC
+on DEA.location =  VAC.location
+and DEA.date = VAC.date
+where DEA.continent is not null
+and DEA.location like '%india%'
+order by 2,3
+
+SELECT *, (total_vaccine_sum/population)*100 as vaccine_percent
+FROM #PercentPopulationVaccinated
+ORDER BY location, date
+
+--Making a view table for the total death count worldwide
+
+--Looking at continents death counts only
+--The go command is used to separate the sql commands
+
+GO 
+
+Create view ContinentDeathMax as 
+Select continent, MAX(CAST(total_deaths as float)) as TOTALDEATHCOUNT
+from portfolio..CovidDeaths
+where continent is not null
+group by continent
+
+GO
+
+Select *
+from ContinentDeathMax
+
+--------Making another View table --------
+
+GO
+
+Create view PercentPopulationView as 
+select DEA.continent, DEA.location, DEA.date ,DEA.population, VAC.new_vaccinations, SUM(CAST(VAC.new_vaccinations as int)) OVER (Partition by DEA.location order by DEA.location, DEA.date) as total_vaccine_sum
+from portfolio..CovidDeaths DEA
+join portfolio..CovidVaccinations VAC
+on DEA.location =  VAC.location
+and DEA.date = VAC.date
+where DEA.continent is not null
+--and DEA.location like '%india%'
+
+GO
+
+Select *
+from PercentPopulationView
+order by 2,3
+
+

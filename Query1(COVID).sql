@@ -57,13 +57,20 @@ group by location, population
 order by 3 DESC
 
 
---Looking at the total death toll over the continents
+--Looking at the total death toll over the continents this shows world as well
 
 Select location, population, MAX(CAST(total_deaths as float)) as TOTALDEATHCOUNT
 from portfolio..CovidDeaths
 where continent is null
 group by location, population
 order by 3 DESC
+
+--Looking at continents death counts only
+
+Select continent, MAX(CAST(total_deaths as float)) as TOTALDEATHCOUNT
+from portfolio..CovidDeaths
+where continent is not null
+group by continent
 
 --The positivity rate region wise
 
