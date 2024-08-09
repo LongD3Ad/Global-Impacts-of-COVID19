@@ -17,7 +17,7 @@ from portfolio..CovidDeaths
 
 Select continent, location,date, total_cases, total_deaths, (total_deaths/total_cases)*100 as death_percentage
 from portfolio..CovidDeaths
-where location like '%sudan%'
+where location like '%india%'
 order by death_percentage DESC
 
 --Looking at the maximum death percentage we had region wise

@@ -152,7 +152,7 @@ join portfolio..CovidVaccinations VAC
 on DEA.location =  VAC.location
 and DEA.date = VAC.date
 where DEA.continent is not null
-and DEA.location like '%india%'
+--and DEA.location like '%india%'
 order by 2,3
 
 SELECT *, (total_vaccine_sum/population)*100 as vaccine_percent
