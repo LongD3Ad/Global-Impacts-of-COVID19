@@ -1,5 +1,8 @@
 # Global Impacts of COVID-19: A Comprehensive Analysis
 
+### Link for the live view of the dashboard
+https://public.tableau.com/app/profile/wesley.thomas1740/viz/Book2_17232231437130/COVID19?publish=yes
+
 ![image](https://github.com/user-attachments/assets/77fe12e0-c36e-42e5-8d48-daeee40cad05)
 
 # Key Visualizations
