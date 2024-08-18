@@ -2,11 +2,21 @@
 
 ![image](https://github.com/user-attachments/assets/77fe12e0-c36e-42e5-8d48-daeee40cad05)
 
-# Key Visuals
+# Key Visualizations
 
-| Image 1 | Image 2 |
-|---|---|
-| <![Time series](https://github.com/user-attachments/assets/db15a269-e85d-4b26-a643-369f9206e38e) > | <![Trends](https://github.com/user-attachments/assets/cc93e7d4-10aa-4cac-81ee-3783ec7ee024) > |
+<table>
+  <tr>
+    <td width="50%">
+      <img src="![Time series](https://github.com/user-attachments/assets/db15a269-e85d-4b26-a643-369f9206e38e)" alt="Observed and Trend" width="100%">
+      <p align="center"><em>Figure 1: Observed Data and Trend Analysis</em></p>
+    </td>
+    <td width="50%">
+      <img src="![Trends](https://github.com/user-attachments/assets/cc93e7d4-10aa-4cac-81ee-3783ec7ee024)" alt="Seasonal and Residual" width="100%">
+      <p align="center"><em>Figure 2: Seasonal Patterns and Residuals</em></p>
+    </td>
+  </tr>
+</table>
+
 
 # KEY INSIGHTS TAKEN FROM THIS PROJECT
 ---
