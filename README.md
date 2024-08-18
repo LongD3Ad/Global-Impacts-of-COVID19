@@ -6,7 +6,7 @@
 
 | Image 1 | Image 2 |
 |---|---|
-| <![image](https://github.com/user-attachments/assets/db15a269-e85d-4b26-a643-369f9206e38e) width="50%"> | <![image](https://github.com/user-attachments/assets/cc93e7d4-10aa-4cac-81ee-3783ec7ee024) alt="Image 2" width="50%"> |
+| <![Time series](https://github.com/user-attachments/assets/db15a269-e85d-4b26-a643-369f9206e38e) > | <![Trends](https://github.com/user-attachments/assets/cc93e7d4-10aa-4cac-81ee-3783ec7ee024) > |
 
 # KEY INSIGHTS TAKEN FROM THIS PROJECT
 ---
