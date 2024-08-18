@@ -23,11 +23,11 @@
   <tr>
     <td width="50%">
       <img src="images/image3.png" alt="Worldwide cases" width="100%">
-      <p align="center"><em>Figure 1: Observed Data and Trend Analysis</em></p>
+      <p align="center"><em>Figure 3: Worldwide cases of COVID 19</em></p>
     </td>
     <td width="50%">
       <img src="images/image4.png" alt="Fatality rate Worldwide" width="100%">
-      <p align="center"><em>Figure 2: Seasonal Patterns and Residuals</em></p>
+      <p align="center"><em>Figure 4: Fatality rate Worldwide</em></p>
     </td>
   </tr>
 </table>
@@ -37,11 +37,11 @@
   <tr>
     <td width="50%">
       <img src="images/image5.png" alt="Correlation Between Features" width="100%">
-      <p align="center"><em>Figure 1: Observed Data and Trend Analysis</em></p>
+      <p align="center"><em>Figure 5: Correlation Between Features</em></p>
     </td>
     <td width="50%">
       <img src="images/image6.png" alt="ICU Patients OverTime" width="100%">
-      <p align="center"><em>Figure 2: Seasonal Patterns and Residuals</em></p>
+      <p align="center"><em>Figure 6: ICU Patients OverTime</em></p>
     </td>
   </tr>
 </table>
